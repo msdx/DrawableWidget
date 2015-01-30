@@ -31,19 +31,24 @@ public class DrawableButton extends Button {
     }
 
     private void applyAttributes(Context context, AttributeSet attrs) {
-        if(mHelper == null) {
+        if (mHelper == null) {
             mHelper = new DrawableSizeHelper();
         }
         mHelper.readAttributes(context, attrs);
-        mHelper.setCompoundDrawablesWithIntrinsicBounds(this);
+        if (!mHelper.isNotSet()) {
+            mHelper.setCompoundDrawablesWithIntrinsicBounds(this);
+        }
     }
 
     @Override
     public void setCompoundDrawablesWithIntrinsicBounds(Drawable left, Drawable top, Drawable right, Drawable bottom) {
         super.setCompoundDrawablesWithIntrinsicBounds(left, top, right, bottom);
-        if(mHelper == null) {
+        if (mHelper == null) {
             mHelper = new DrawableSizeHelper();
         }
         mHelper.setDrawable(left, top, right, bottom);
+        if (!mHelper.isNotSet()) {
+            mHelper.setCompoundDrawablesWithIntrinsicBounds(this);
+        }
     }
 }

@@ -35,7 +35,9 @@ public class DrawableTextView extends TextView {
             mHelper = new DrawableSizeHelper();
         }
         mHelper.readAttributes(context, attrs);
-        mHelper.setCompoundDrawablesWithIntrinsicBounds(this);
+        if(!mHelper.isNotSet()) {
+            mHelper.setCompoundDrawablesWithIntrinsicBounds(this);
+        }
     }
 
     @Override
