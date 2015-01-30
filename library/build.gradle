@@ -1,0 +1,35 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.0'
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        minSdkVersion 8
+        targetSdkVersion 21
+        versionCode 1
+        versionName PROJ_VERSION
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:21.0.3'
+}
+
+//apply from:'https://raw.githubusercontent.com/msdx/gradle-publish/master/bintray.gradle'
