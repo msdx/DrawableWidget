@@ -24,6 +24,7 @@
     <com.githang.drawablewidget.DrawableButton
         android:text="@string/with_drawable_size"
         android:drawableRight="@drawable/launcher"
+        android:drawableEnd="@drawable/launcher"
         app:drawableWidth="32dp"
         app:drawableHeight="32dp"
         android:layout_width="match_parent"
