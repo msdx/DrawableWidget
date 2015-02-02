@@ -4,6 +4,7 @@
  */
 package com.githang.drawablewidget;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
@@ -55,5 +56,22 @@ public class DrawableSizeHelper {
             bottom.setBounds(0, 0, mDrawableWidht, mDrawableHeight);
         }
         widget.setCompoundDrawables(left, top, right, bottom);
+    }
+
+    @TargetApi(17)
+    public void setCompoundDrawablesRelativeWithIntrinsicBounds(TextView widget) {
+        if (left != null) {
+            left.setBounds(0, 0, mDrawableWidht, mDrawableHeight);
+        }
+        if (right != null) {
+            right.setBounds(0, 0, mDrawableWidht, mDrawableHeight);
+        }
+        if (top != null) {
+            top.setBounds(0, 0, mDrawableWidht, mDrawableHeight);
+        }
+        if (bottom != null) {
+            bottom.setBounds(0, 0, mDrawableWidht, mDrawableHeight);
+        }
+        widget.setCompoundDrawablesRelativeWithIntrinsicBounds(left, top, right, bottom);
     }
 }
