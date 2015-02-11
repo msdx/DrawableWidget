@@ -18,6 +18,7 @@ android {
         targetSdkVersion 21
         versionCode 1
         versionName PROJ_VERSION
+        resourcePrefix 'com_githang_'
     }
     buildTypes {
         release {
@@ -32,4 +33,4 @@ dependencies {
     compile 'com.android.support:appcompat-v7:21.0.3'
 }
 
-//apply from:'https://raw.githubusercontent.com/msdx/gradle-publish/master/bintray.gradle'
+apply from:'https://raw.githubusercontent.com/msdx/gradle-publish/master/bintray.gradle'

@@ -1,6 +1,7 @@
 # DrawableWidget
 
 [![Build Status](https://travis-ci.org/msdx/DrawableWidget.png)](https://travis-ci.org/msdx/DrawableWidget)
+[ ![Download](https://api.bintray.com/packages/msdx/maven/drawablewidget/images/download.svg) ](https://bintray.com/msdx/maven/drawablewidget/_latestVersion)
 
 The widgets that the drawable size could be custom in xml.
 
@@ -15,7 +16,7 @@ Make sure you declare the JCenter repository in your project's `build.gradle`:
 Then add a compile-time dependency on this library, adding the `dependencies` section to `build.gradle` if it doesn't already exist:
 
     dependencies {
-        compile 'com.githang:drawable-widget:0.1.2'
+        compile 'com.githang:drawable-widget:0.1.3'
     }
 
 ## Usage
