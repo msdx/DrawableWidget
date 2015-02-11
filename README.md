@@ -1,7 +1,7 @@
 # DrawableWidget
 
 [![Build Status](https://travis-ci.org/msdx/DrawableWidget.png)](https://travis-ci.org/msdx/DrawableWidget)
-
+[ ![Download](https://api.bintray.com/packages/msdx/maven/drawablewidget/images/download.svg) ](https://bintray.com/msdx/maven/drawablewidget/_latestVersion)
 The widgets that the drawable size could be custom in xml.
 
 ## Installation
