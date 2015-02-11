@@ -31,6 +31,12 @@ public class DrawableTextView extends TextView {
         applyAttributes(context, attrs);
     }
 
+    @TargetApi(21)
+    public DrawableTextView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes, DrawableSizeHelper helper) {
+        super(context, attrs, defStyleAttr, defStyleRes);
+        applyAttributes(context, attrs);
+    }
+
     private void applyAttributes(Context context, AttributeSet attrs) {
         if(mHelper == null) {
             mHelper = new DrawableSizeHelper();

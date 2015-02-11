@@ -1,5 +1,5 @@
 /*
- * Date: 15-1-30
+ * Date: 15-2-11
  * Project: DrawableWidget
  */
 package com.githang.drawablewidget;
@@ -8,41 +8,41 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
-import android.widget.Button;
+import android.widget.EditText;
 
 /**
  * Author: msdx (645079761@qq.com)
- * Time: 15-1-30 下午5:03
+ * Time: 15-2-11 下午3:02
  */
-public class DrawableButton extends Button {
+public class DrawableEditText extends EditText {
     private DrawableSizeHelper mHelper;
 
-    public DrawableButton(Context context) {
+    public DrawableEditText(Context context) {
         super(context);
     }
 
-    public DrawableButton(Context context, AttributeSet attrs) {
+    public DrawableEditText(Context context, AttributeSet attrs) {
         super(context, attrs);
         applyAttributes(context, attrs);
     }
 
-    public DrawableButton(Context context, AttributeSet attrs, int defStyleAttr) {
+    public DrawableEditText(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         applyAttributes(context, attrs);
     }
 
     @TargetApi(21)
-    public DrawableButton(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public DrawableEditText(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         applyAttributes(context, attrs);
     }
 
     private void applyAttributes(Context context, AttributeSet attrs) {
-        if (mHelper == null) {
+        if(mHelper == null) {
             mHelper = new DrawableSizeHelper();
         }
         mHelper.readAttributes(context, attrs);
-        if (!mHelper.isNotSet()) {
+        if(!mHelper.isNotSet()) {
             mHelper.setCompoundDrawablesWithIntrinsicBounds(this);
         }
     }
@@ -50,11 +50,11 @@ public class DrawableButton extends Button {
     @Override
     public void setCompoundDrawablesWithIntrinsicBounds(Drawable left, Drawable top, Drawable right, Drawable bottom) {
         super.setCompoundDrawablesWithIntrinsicBounds(left, top, right, bottom);
-        if (mHelper == null) {
+        if(mHelper == null) {
             mHelper = new DrawableSizeHelper();
         }
         mHelper.setDrawable(left, top, right, bottom);
-        if (!mHelper.isNotSet()) {
+        if(!mHelper.isNotSet()) {
             mHelper.setCompoundDrawablesWithIntrinsicBounds(this);
         }
     }
