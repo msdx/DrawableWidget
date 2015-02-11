@@ -33,4 +33,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:21.0.3'
 }
 
-apply from:'https://raw.githubusercontent.com/msdx/gradle-publish/master/bintray.gradle'
+if(hasProperty('BINTRAY_USER') && hasProperty('BINTRAY_KEY')) {
+    apply from: 'https://raw.githubusercontent.com/msdx/gradle-publish/master/bintray.gradle'
+}
