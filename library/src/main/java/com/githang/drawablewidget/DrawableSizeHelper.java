@@ -21,12 +21,12 @@ public class DrawableSizeHelper {
     private Drawable right;
     private Drawable bottom;
 
-    private int mDrawableWidht;
+    private int mDrawableWidth;
     private int mDrawableHeight;
 
     public void readAttributes(Context context, AttributeSet attrs) {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.DrawableButton);
-        mDrawableWidht = typedArray.getDimensionPixelSize(R.styleable.DrawableButton_drawableWidth, 0);
+        mDrawableWidth = typedArray.getDimensionPixelSize(R.styleable.DrawableButton_drawableWidth, 0);
         mDrawableHeight = typedArray.getDimensionPixelSize(R.styleable.DrawableButton_drawableHeight, 0);
         typedArray.recycle();
     }
@@ -39,38 +39,52 @@ public class DrawableSizeHelper {
     }
 
     public boolean isNotSet() {
-        return mDrawableWidht <= 0 || mDrawableHeight <= 0;
+        return mDrawableWidth <= 0 && mDrawableHeight <= 0;
     }
 
     public void setCompoundDrawablesWithIntrinsicBounds(TextView widget) {
         if (left != null) {
-            left.setBounds(0, 0, mDrawableWidht, mDrawableHeight);
+            left.setBounds(0, 0, calculateWidth(left), calculateHeight(left));
         }
         if (right != null) {
-            right.setBounds(0, 0, mDrawableWidht, mDrawableHeight);
+            right.setBounds(0, 0, calculateWidth(right), calculateHeight(right));
         }
         if (top != null) {
-            top.setBounds(0, 0, mDrawableWidht, mDrawableHeight);
+            top.setBounds(0, 0, calculateWidth(top), calculateHeight(top));
         }
         if (bottom != null) {
-            bottom.setBounds(0, 0, mDrawableWidht, mDrawableHeight);
+            bottom.setBounds(0, 0, calculateWidth(bottom), calculateHeight(bottom));
         }
         widget.setCompoundDrawables(left, top, right, bottom);
+    }
+
+    public int calculateWidth(Drawable d) {
+        if(mDrawableWidth == 0) {
+            return d.getIntrinsicWidth() * mDrawableHeight / d.getIntrinsicHeight();
+        }
+        return mDrawableWidth;
+    }
+
+    public int calculateHeight(Drawable d) {
+        if(mDrawableHeight == 0) {
+            return  d.getIntrinsicHeight() * mDrawableWidth / d.getIntrinsicWidth();
+        }
+        return mDrawableHeight;
     }
 
     @TargetApi(17)
     public void setCompoundDrawablesRelativeWithIntrinsicBounds(TextView widget) {
         if (left != null) {
-            left.setBounds(0, 0, mDrawableWidht, mDrawableHeight);
+            left.setBounds(0, 0, mDrawableWidth, mDrawableHeight);
         }
         if (right != null) {
-            right.setBounds(0, 0, mDrawableWidht, mDrawableHeight);
+            right.setBounds(0, 0, mDrawableWidth, mDrawableHeight);
         }
         if (top != null) {
-            top.setBounds(0, 0, mDrawableWidht, mDrawableHeight);
+            top.setBounds(0, 0, mDrawableWidth, mDrawableHeight);
         }
         if (bottom != null) {
-            bottom.setBounds(0, 0, mDrawableWidht, mDrawableHeight);
+            bottom.setBounds(0, 0, mDrawableWidth, mDrawableHeight);
         }
         widget.setCompoundDrawablesRelativeWithIntrinsicBounds(left, top, right, bottom);
     }
