@@ -1,40 +1,39 @@
 /*
- * Date: 15-1-30
- * Project: DrawableWidget
+ * Copyright (c) 2015. Huang Haohang.
+ * All rights reserved.
  */
+
 package com.githang.drawablewidget;
 
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
-import android.widget.Button;
+import android.widget.RadioButton;
 
 /**
  * @author 黄浩杭 (msdx.android@qq.com)
  */
-public class DrawableButton extends Button {
+public class DrawableRadio extends RadioButton {
     private DrawableSizeHelper mHelper;
 
-    public DrawableButton(Context context) {
+    public DrawableRadio(Context context) {
         super(context);
     }
 
-    public DrawableButton(Context context, AttributeSet attrs) {
+    public DrawableRadio(Context context, AttributeSet attrs) {
         super(context, attrs);
-        applyAttributes(context, attrs);
     }
 
-    public DrawableButton(Context context, AttributeSet attrs, int defStyleAttr) {
+    public DrawableRadio(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        applyAttributes(context, attrs);
     }
 
     @TargetApi(21)
-    public DrawableButton(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public DrawableRadio(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
-        applyAttributes(context, attrs);
     }
+
 
     private void applyAttributes(Context context, AttributeSet attrs) {
         if (mHelper == null) {

@@ -11,8 +11,7 @@ import android.util.AttributeSet;
 import android.widget.EditText;
 
 /**
- * Author: msdx (645079761@qq.com)
- * Time: 15-2-11 下午3:02
+ * @author 黄浩杭 (msdx.android@qq.com)
  */
 public class DrawableEditText extends EditText {
     private DrawableSizeHelper mHelper;

@@ -12,8 +12,7 @@ import android.util.AttributeSet;
 import android.widget.TextView;
 
 /**
- * Author: msdx (645079761@qq.com)
- * Time: 15-1-30 下午5:05
+ * @author 黄浩杭 (msdx.android@qq.com)
  */
 public class DrawableSizeHelper {
     private Drawable left;
