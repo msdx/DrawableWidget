@@ -23,15 +23,18 @@ public class DrawableRadio extends RadioButton {
 
     public DrawableRadio(Context context, AttributeSet attrs) {
         super(context, attrs);
+        applyAttributes(context, attrs);
     }
 
     public DrawableRadio(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        applyAttributes(context, attrs);
     }
 
     @TargetApi(21)
     public DrawableRadio(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
+        applyAttributes(context, attrs);
     }
 
 
